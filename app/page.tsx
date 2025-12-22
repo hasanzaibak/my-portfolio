@@ -1,12 +1,19 @@
 import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen px-6 py-16 md:px-16 lg:px-24 xl:px-32">
-      <div className="max-w-4xl">
+      <div className="mx-auto max-w-4xl">
         <section className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
-          <div className="relative h-64 w-32 shrink-0 overflow-hidden rounded-full bg-muted md:h-80 md:w-40">
-            <div className="absolute inset-0 bg-gradient-to-b from-muted-foreground/20 to-transparent" />
+          <div className="relative h-64 w-44 shrink-0 overflow-hidden rounded-full md:h-80 md:w-56">
+            <Image
+              src="/hero3.webp"
+              alt="Hasan Zaibak"
+              fill
+              priority
+              className="object-cover object-[50%_10%]"
+            />
           </div>
 
           <div className="flex flex-col gap-6">

@@ -14,7 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hasan Zaibak",
-  description: "My Portfolio",
+  description: "Hasan Zaibak's Portfolio",
+  icons: {
+    icon: "/icon2.webp",
+    apple: "/icon2.webp",
+  },
 };
 
 export default function RootLayout({
