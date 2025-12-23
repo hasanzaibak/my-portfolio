@@ -1,7 +1,43 @@
 import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 
+
+const workExperience = [
+  {
+    period: "2024 — Now",
+    title: "Software Engineer",
+    company: "Shopee",
+    description: "Commercial intelligence and planning. Built template generation systems, internal service platforms, and automation scripts enabling data-driven decision-making."
+  },
+  {
+    period: "2023 — 2024",
+    title: "Data Scraper",
+    company: "FoodStyles",
+    description: "Created scraping templates and instructions for accurate data extraction. Verified and reviewed data quality across the team."
+  },
+  {
+    period: "2021 — 2023",
+    title: "Frontend Developer",
+    company: "Freelance",
+    description: "Developed responsive websites transforming Figma designs into functional web experiences using modern frontend technologies."
+  }
+];
+
+const education = [
+  {
+    period: "2019 — 2022",
+    degree: "Master's Degree",
+    institution: "USP — Universidade de São Paulo",
+  },
+  {
+    period: "2011 — 2016",
+    degree: "Bachelor's Degree",
+    institution: "Damascus University",
+  },
+];
+
 export default function Home() {
+
   return (
     <main className="min-h-screen px-6 py-16 md:px-16 lg:px-24 xl:px-32">
       <div className="mx-auto max-w-4xl">
@@ -64,43 +100,21 @@ export default function Home() {
           </h2>
 
           <div className="mt-8 flex flex-col gap-10">
-            <div className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
-              <span className="text-sm text-muted-foreground">2024 — Now</span>
-              <div>
-                <h3 className="font-medium">Software Engineer</h3>
-                <p className="text-sm text-muted-foreground">Shopee</p>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  Commercial intelligence and planning. Built template
-                  generation systems, internal service platforms, and automation
-                  scripts enabling data-driven decision-making.
-                </p>
-              </div>
-            </div>
 
-            <div className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
-              <span className="text-sm text-muted-foreground">2023 — 2024</span>
-              <div>
-                <h3 className="font-medium">Data Scraper</h3>
-                <p className="text-sm text-muted-foreground">FoodStyles</p>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  Created scraping templates and instructions for accurate data
-                  extraction. Verified and reviewed data quality across the
-                  team.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
-              <span className="text-sm text-muted-foreground">2021 — 2023</span>
-              <div>
-                <h3 className="font-medium">Frontend Developer</h3>
-                <p className="text-sm text-muted-foreground">Freelance</p>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  Developed responsive websites transforming Figma designs into
-                  functional web experiences using modern frontend technologies.
-                </p>
-              </div>
-            </div>
+            {workExperience.map((entry, idx) => {
+              return (
+                <div key={entry.title + idx} className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
+                  <span className="text-sm text-muted-foreground">{entry.period}</span>
+                  <div>
+                    <h3 className="font-medium">{entry.title}</h3>
+                    <p className="text-sm text-muted-foreground">{entry.company}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+                      {entry.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </section>
 
@@ -110,25 +124,20 @@ export default function Home() {
           </h2>
 
           <div className="mt-8 flex flex-col gap-6">
-            <div className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
-              <span className="text-sm text-muted-foreground">2019 — 2022</span>
-              <div>
-                <h3 className="font-medium">Master&apos;s Degree</h3>
-                <p className="text-sm text-muted-foreground">
-                  USP — Universidade de São Paulo
-                </p>
-              </div>
-            </div>
+            {education.map((entry, idx) => {
+              return (
+                <div key={entry.period + idx} className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
+                  <span className="text-sm text-muted-foreground">{entry.period}</span>
+                  <div>
+                    <h3 className="font-medium">{entry.degree}</h3>
+                    <p className="text-sm text-muted-foreground">
+                      {entry.institution}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
 
-            <div className="grid gap-1 md:grid-cols-[140px_1fr] md:gap-8">
-              <span className="text-sm text-muted-foreground">2011 — 2016</span>
-              <div>
-                <h3 className="font-medium">Bachelor&apos;s Degree</h3>
-                <p className="text-sm text-muted-foreground">
-                  Damascus University
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
